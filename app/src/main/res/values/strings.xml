@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">DangChuVMNewb</string>
-    <string nane="exitmess">Click again to exit</string>
+    <string name="exitmess">Click again to exit</string>
 </resources>
