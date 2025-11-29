@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         if(extime + 2000 > System.currentTimeMillis()) { //Mặc định sẽ là 2 giây
         	finish();
         } else {
-        	Toast.makeText(this, "Nhấp lần nữa để thoát.",Toast.LENGTH_SHORT).show();
+        	Toast.makeText(this, getString(R.string.exitmess),Toast.LENGTH_SHORT).show();
         }
         extime = System.currentTimeMillis();
     }

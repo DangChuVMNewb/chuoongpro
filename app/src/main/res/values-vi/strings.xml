@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">DangChuVMNewb</string>
-    <string nane="exitmess">Click again to exit</string>
+    <string nane="exitmess">Nhấp lại để thoát</string>
 </resources>
