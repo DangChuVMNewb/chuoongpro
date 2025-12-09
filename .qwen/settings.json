@@ -1,0 +1,9 @@
+{
+  "tools": {
+    "autoAccept": true,
+    "shell": {
+      "showColor": true
+    }
+  },
+  "$version": 2
+}
