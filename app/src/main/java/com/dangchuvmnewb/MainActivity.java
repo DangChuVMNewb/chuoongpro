@@ -1,6 +1,7 @@
 package com.dangchuvmnewb;
 
 import android.os.Bundle;
+import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -21,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        
+
         WebView webView = binding.webview;
         WebSettings ws = webView.getSettings();
-        
+
         ws.setMediaPlaybackRequiresUserGesture(false);
         ws.setBuiltInZoomControls(true);
         ws.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -40,7 +41,20 @@ public class MainActivity extends AppCompatActivity {
         ws.setDomStorageEnabled(true);
         ws.setSupportZoom(true);
         ws.setUseWideViewPort(true);
-        
+
+        // Set up download listener to handle file downloads
+        webView.setDownloadListener(new DownloadListener() {
+            @Override
+            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
+                DownloadUtility.downloadFile(
+                    MainActivity.this,
+                    url,
+                    null, // Will auto-generate filename from URL
+                    "Downloading file..."
+                );
+            }
+        });
+
         binding.webview.loadUrl("https://google.com");
     }
 
